@@ -1,0 +1,52 @@
+MDFloatLayout:
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+        ScrollView:
+            id: view
+            do_scroll_y: True
+
+            Label:
+                id: word_label
+
+                size_hint_y: None
+                height: self.texture_size[0]
+
+                text_size: self.size
+                halign: "center"
+                valign: "top"
+                text: "Enter A Name Author Genre and Year"
+                font_size: 32
+
+		TextInput:
+			id: name_input
+			multiline: False
+			size_hint: (1, .5)
+
+		TextInput:
+            id: author_input
+            multiline: False
+            size_hint: (1, .5)
+
+        TextInput:
+            id: genre_input
+            multiline: False
+            size_hint: (1, .5)
+
+        TextInput:
+            id: year_input
+            multiline: False
+            size_hint: (1, .5)
+
+		Button:
+			size_hint: (1, .5)
+			font_size: 32
+			text: "Add"
+			on_press: app.submit()
+
+		Button:
+			size_hint: (1, .5)
+			font_size: 32
+			text: "Show all books"
+            on_press: app.show_records()
